@@ -25,4 +25,9 @@ app.use('/', users);
 app.use('/users', user);
 
 
+var port = 1337; //2leet4u - Lets us use localhost:1337 in browser.
+app.listen(port);
+console.log('Listening on port: ' + port + '...');
+console.log('\r\n');
+
 module.exports = app;

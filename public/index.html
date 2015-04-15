@@ -1,17 +1,32 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title></title>
+    <title>To Do</title>
+
+    <base href="/">
+
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="libs/angular/angular.js"></script>
+    <script type="text/javascript" src="libs/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="libs/angular-route/angular-route.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers/mainController.js"></script>
 
     <script src="http://localhost:35729/livereload.js"></script>
 
 </head>
-<body>
+<body class="container" ng-controller="mainController as main">
 
-<p>this is the index page</p>
+    <div class="jumbotron text-center">
+        <h1>{{ main.message }}</h1>
+    </div>
+
+    <div ng-view></div>
 
 </body>
 </html>

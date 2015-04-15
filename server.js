@@ -10,6 +10,7 @@ app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
 app.use('/', routes);
+//TODO app.use('/api', apiroutes);
 
 app.listen(app.get('port'));
 console.log('Listening on port: ' + app.get('port') + '...');

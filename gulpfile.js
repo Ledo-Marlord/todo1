@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   livereload = require('gulp-livereload'),
-  sass = require('gulp-ruby-sass');
+  sass = require('gulp-ruby-sass'),
+  inject = require('gulp-inject');
 
 gulp.task('sass', function () {
   return sass('public/css/')
@@ -9,8 +10,22 @@ gulp.task('sass', function () {
     .pipe(livereload());
 });
 
-gulp.task('watch', function() {
+gulp.task('injectModules', function () {
+  var target = gulp.src('./public/index.html');
+  var source = gulp.src('./public/assets/modules.html');
+
+  return target.pipe(inject(source, {
+    starttag: '<!-- inject:modules:html -->',
+    transform: function (filePath, file) {
+      return file.contents.toString('utf8')
+    }
+  }))
+      .pipe(gulp.dest('./public'));
+});
+
+gulp.task('watch', function () {
   gulp.watch('public/css/', ['sass']);
+  gulp.watch('public/assets/modules.html', ['injectModules']);
 });
 
 gulp.task('develop', function () {
@@ -27,6 +42,7 @@ gulp.task('develop', function () {
 
 gulp.task('default', [
   'sass',
+  'injectModules',
   'develop',
   'watch'
 ]);

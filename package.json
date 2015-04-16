@@ -11,8 +11,9 @@
   },
   "devDependencies": {
     "gulp": "~3.8.10",
-    "gulp-ruby-sass": "~1.0.0-alpha",
+    "gulp-inject": "^1.2.0",
+    "gulp-livereload": "~3.8.0",
     "gulp-nodemon": "~1.0.4",
-    "gulp-livereload": "~3.8.0"
+    "gulp-ruby-sass": "~1.0.0-alpha"
   }
 }

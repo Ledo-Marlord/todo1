@@ -1,6 +1,7 @@
 var express = require('express');
 //var path = require('path');
 var routes = require('./app/routes/routes');
+var api = require('./app/routes/api');
 var app = express();
 
 app.set('port', process.env.PORT || 1337);
@@ -10,7 +11,9 @@ app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
 app.use('/', routes);
-//TODO app.use('/api', apiroutes);
+app.use('/api', api);
+
+
 
 app.listen(app.get('port'));
 console.log('Listening on port: ' + app.get('port') + '...');

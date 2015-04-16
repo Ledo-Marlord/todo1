@@ -1,9 +1,9 @@
-(function () {
+(function (){
     angular
-        .module('todoApp', [])
+        .module('mainController', [])
+        .controller('mainController', function() {
 
-    .controller('mainController', function() {
-        var vm = this;
-        vm.message = 'AYY LMAO!';
-    });
+            this.message = 'AYYYYYYYYY';
+
+        });
 }());

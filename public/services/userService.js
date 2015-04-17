@@ -1,20 +1,18 @@
 (function (){
     angular
         .module('userService', [])
-        .factory('user', user);
+        .factory('User', user);
 
         function user ($http) {
+
+            // Create Object
+            var user = {};
+
             // call to get THE user
-            var get = function () {
-                return $http.get('/api/user')
-                    .then(function (res) {
-                        return res.data.message;
-                    });
-
+            user.all = function () {
+                return $http.get('/api/user');
             };
 
-            return {
-                getUser: get
-            };
+            return user;
         }
 }());

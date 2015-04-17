@@ -1,19 +1,12 @@
 (function (){
     angular
-        .module('homeController', [])
-        .controller('homeController', function($scope, user) {
+        .module('homeController', ['userService'])
+        .controller('homeController', function($scope, User) {
 
-
-
-            var setMessage = function (data) {
-                $scope.message = data;
-            };
-
-            var error = function (err) {
-                console.log(err);
-            };
-
-            user.getUser().then(setMessage, error);
+            User.all()
+                .success(function(data){
+                    $scope.message = data.message;
+                });
 
 
         });

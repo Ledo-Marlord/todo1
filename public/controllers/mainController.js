@@ -3,7 +3,7 @@
         .module('mainController', [])
         .controller('mainController', function() {
 
-            this.message = 'Words';
+            this.message = 'Angular Todo';
 
         });
 }());

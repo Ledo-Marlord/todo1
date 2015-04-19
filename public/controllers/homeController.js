@@ -3,10 +3,13 @@
         .module('homeController', ['userService'])
         .controller('homeController', function($scope, User) {
 
-            User.all()
-                .success(function(data){
-                    $scope.message = data.message;
-                });
+            $scope.getUserResponse = function () {
+                User.all()
+                    .success(function(data){
+                        $scope.dicks = data.message;
+                    });
+            }
+
 
 
         });

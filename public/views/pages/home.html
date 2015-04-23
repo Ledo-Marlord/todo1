@@ -1,3 +1,18 @@
-<button class="btn center-block" ng-click="getUserResponse()">
-    Press Me!
+<h3><a href="/test">to test page</a></h3>
+{{message}}
+<br>
+<br>
+<button id="user-btn" ng-click="getUserResponse()">
+    PRESS
+</button>
+<div>
+    <br>
+    <ul>
+        <li>{{ name }}</li>
+        <li>{{ userID }}</li>
+        <li>{{ phone }}</li>
+    </ul>
+</div>
+<button id="save-btn" ng-click="postUserInfo()">
+    PRESS TO SAVE
 </button>

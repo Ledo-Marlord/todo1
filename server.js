@@ -1,5 +1,6 @@
 var express = require('express');
 //var path = require('path');
+var db = require('./config/db');
 var frontendRoutes = require('./app/routes/frontendRoutes');
 var apiRoutes = require('./app/routes/apiRoutes');
 var app = express();

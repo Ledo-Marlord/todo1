@@ -13,7 +13,13 @@
                             return true;
                         });
                         toaster.success({title: "A Toast!", body: data.message});
+                        $scope.name = data.name;
+                        $scope.userID = data.userID;
+                        $scope.phone = data.phone;
                     });
             };
+            $scope.postUserInfo = function () {
+
+            }
         }
 }());

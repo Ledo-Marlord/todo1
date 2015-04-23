@@ -1,20 +1,14 @@
 (function (){
     angular
-        .module('homeController', ['userService'])
+        .module('homeController', ['userService', 'ngAnimate', 'toaster'])
         .controller('homeController', homeController);
 
-        function homeController($scope, User, $timeout) {
+        function homeController($scope, User, $timeout, toaster) {
             $scope.getUserResponse = function () {
                 User.all()
                     .success(function(data){
-                        $scope.buttonTest = data.message;
-
-                        $timeout(returnBtnText, 1500);
+                        toaster.success({title: "A Toast!", body: data.message});
                     });
             };
-
-            var returnBtnText = function() {
-                $scope.buttonTest = "Press Me!"
-            }
         }
 }());

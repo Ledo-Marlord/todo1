@@ -1,24 +1,24 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <div class="navbar-brand"> {{ navbar.brand }} </div>
+        <div class="navbar-brand"> {{ vm.brand }} </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="/">{{navbar.page1}}</a>
+                    <a href="{{vm.navbar.linkpage1}}">{{vm.navbar.page1}}</a>
                 </li>
                 <li>
-                    <a href="/test">{{navbar.page2}}</a>
+                    <a href="{{vm.navbar.linkpage2}}">{{vm.navbar.page2}}</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav pull-right navbar-collapse collapse">
                 <li>
-                    <a href="http://www.github.com/Ledo-Marlord/todo1/" target="_blank">Github</a>
+                    <a href="{{vm.navlinks.link1}}" target="_blank">{{vm.navlinks.title1}}</a>
                 </li>
                 <li>
-                    <a href="http://www.groupme.com" target="_blank">GroupMe</a>
+                    <a href="{{vm.navlinks.link2}}" target="_blank">{{vm.navlinks.title2}}</a>
                 </li>
                 <li>
-                    <a href="https://trello.com/b/a35430rn/todo-app" target="_blank">Trello</a>
+                    <a href="{{vm.navlinks.link3}}" target="_blank">{{vm.navlinks.title3}}</a>
                 </li>
             </ul>
         </div>

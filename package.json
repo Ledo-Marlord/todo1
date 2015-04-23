@@ -15,6 +15,10 @@
     "gulp-livereload": "~3.8.0",
     "gulp-nodemon": "~1.0.4",
     "gulp-ruby-sass": "~1.0.0-alpha",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-jasmine": "^0.3.5",
     "path": "^0.11.14"
   }
 }

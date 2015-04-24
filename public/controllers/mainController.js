@@ -1,12 +1,14 @@
 (function (){
     angular
-        .module('mainController', [])
+        .module('mainController', ['ngMaterial'])
         .controller('mainController', mainController);
 
         function mainController($scope) {
 
             this.message = 'Angular Todo';
 
-            //TODO: Include the other links in this format as an array and deliver them to the navbar directive as a repeat
+            $scope.helloWorld = function() {
+                alert('Material Design is awesome!');
+            }
         }
 }());

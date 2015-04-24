@@ -20,9 +20,9 @@
         return directive;
     }
 
-    navController.$inject = ['$scope'];
+    navController.$inject = ['$scope', '$location'];
 
-    function navController($scope) {
+    function navController($scope, $location) {
         var vm = this;
 
         vm.brand = 'Todo App';
@@ -33,6 +33,10 @@
         vm.navlinks = {link1: 'http://www.github.com/Ledo-Marlord/todo1/', title1: 'GitHub',
                        link2: 'http://www.groupme.com',                    title2: 'GroupMe',
                        link3: 'https://trello.com/b/a35430rn/todo-app',    title3: 'Trello'};
+
+        vm.isActive = function (viewLocation) {
+            return viewLocation === $location.path();
+        };
     }
 
 }());

@@ -4,12 +4,17 @@ body {
   background-color: white; }
 
 .jumbotron {
-  background-color: #9BC0C9; }
+  background-color: #B8C4C7;
+  margin-bottom: 0px; }
 
 a {
   color: #00B7FF; }
 
 #userInfo {
-  padding-top: 20px; }
+  margin-top: 0px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #f9f2f4; }
 
-/*# sourceMappingURL=style.css.map */
+#button-container {
+  height: 35px; }

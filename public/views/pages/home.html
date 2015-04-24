@@ -1,21 +1,28 @@
 <div class="text-center">
-    <button class="btn btn-success" id="user-btn" ng-click="getUserResponse()">
-        Get User Data from Server
-    </button>
-    <button id="save-btn" class="btn btn-warning" ng-click="postUserInfo()">
-        Post User Data to Server
-    </button>
-    <button class="btn btn-primary" ng-click="linkToToast()">
-        Toaster Info
-    </button>
-    <button class="btn btn-danger" ng-click="clearData()">
-        Toaster Info
-    </button>
-    <div id="userInfo" class="text-center">
-        <ul style="list-style: none; font-size: 20px;">
+    <div id="button-container">
+
+        <md-button style="background-color: green;" class="md-raised btn btn-success col-sm-3 col-xs-12" ng-click="getUserResponse()">Get User Data</md-button>
+
+        <!-- TODO update the rest of the buttons in this list with Material Design.-->
+        <!-- TODO also, I'd like to break them out at some point and put them in a vertical list from the FAB-->
+
+
+        <button id="save-btn" class="btn btn-warning col-sm-3 col-xs-12" ng-click="postUserInfo()">
+            Post User Data
+        </button>
+        <button class="btn btn-primary col-sm-3 col-xs-12" ng-click="linkToToast()">
+            Toaster Info
+        </button>
+        <button class="btn btn-danger col-sm-3 col-xs-12" ng-click="clearData()">
+            Clear User Data
+        </button>
+    </div>
+    <div id="userInfo" class="container-fluid text-center">
+        <ul class="col-sm-6 col-sm-offset-3 col-xs-12" style="text-align: left; list-style: none; font-size: 20px;">
             <li>Username: {{ name }}</li>
             <li>User ID: {{ userID }}</li>
             <li>Phone Number: {{ phone }}</li>
         </ul>
     </div>
+
 </div>

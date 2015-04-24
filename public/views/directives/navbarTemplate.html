@@ -1,16 +1,25 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-brand"> {{ vm.brand }} </div>
+
+        <button type="button" class="navbar-toggle"
+                ng-click="collapse = !collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>
+                <li ng-class="{active: vm.isActive('/')}">
                     <a href="{{vm.navbar.linkpage1}}">{{vm.navbar.page1}}</a>
                 </li>
-                <li>
+                <li ng-class="{active: vm.isActive('/test')}">
                     <a href="{{vm.navbar.linkpage2}}">{{vm.navbar.page2}}</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav pull-right navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
                 <li>
                     <a href="{{vm.navlinks.link1}}" target="_blank">{{vm.navlinks.title1}}</a>
                 </li>

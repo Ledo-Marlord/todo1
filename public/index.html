@@ -7,15 +7,20 @@
 
     <base href="/">
 
+    <link rel="icon" type="image/ico" href="../assets/favicon2.ico">
+
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link href="../libs/angularjs-toaster/toaster.min.css" rel="stylesheet"/>
+    <link href="../libs/angular-material/angular-material.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="../libs/angular/angular.js"></script>
     <script type="text/javascript" src="../libs/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="../libs/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="../libs/angularjs-toaster/toaster.js"></script>
     <script type="text/javascript" src="../libs/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="../libs/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="../libs/angular-material/angular-material.js"></script>
 
     <!-- inject:modules:html -->
     <script type="text/javascript" src="app.js"></script>
@@ -30,9 +35,9 @@
     <script src="http://localhost:35729/livereload.js"></script>
 
 </head>
-<body>
-    <div class="container" ng-controller="mainController as main">
-        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right'}"></toaster-container>
+<body ng-controller="mainController as main">
+    <div class="container">
+        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right', 'showEasing':'linear'}"></toaster-container>
 
         <top-navbar></top-navbar>
 
@@ -43,5 +48,10 @@
         <div ng-view></div>
 
     </div>
+
+    <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Eat cake" ng-click="helloWorld()">
+        +
+    </md-button>
+
 </body>
 </html>

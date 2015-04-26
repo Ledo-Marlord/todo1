@@ -42,7 +42,7 @@ gulp.task('develop', function () {
 
 gulp.task('default', [
   'sass',
-  'injectModules',
+  //'injectModules',
   'develop',
   'watch'
 ]);

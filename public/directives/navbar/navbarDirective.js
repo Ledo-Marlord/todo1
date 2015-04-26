@@ -13,7 +13,7 @@
             replace: true,
             controller: navController,
             controllerAs: 'vm',
-            templateUrl: 'views/directives/navbarTemplate.html',
+            templateUrl: 'navbarTemplate.html',
             transclude: true
         };
 

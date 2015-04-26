@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('todoNavbar', [])
+        .module('todoNavbar', ['ngMaterial'])
         .directive('topNavbar', navbar);
 
     function navbar() {

@@ -11,13 +11,13 @@
 
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link href="../libs/angularjs-toaster/toaster.min.css" rel="stylesheet"/>
+    <link href="../libs/AngularJS-Toaster/toaster.min.css" rel="stylesheet"/>
     <link href="../libs/angular-material/angular-material.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="../libs/angular/angular.js"></script>
     <script type="text/javascript" src="../libs/angular-animate/angular-animate.js"></script>
     <script type="text/javascript" src="../libs/angular-aria/angular-aria.js"></script>
-    <script type="text/javascript" src="../libs/angularjs-toaster/toaster.js"></script>
+    <script type="text/javascript" src="../libs/AngularJS-Toaster/toaster.js"></script>
     <script type="text/javascript" src="../libs/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="../libs/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="../libs/angular-material/angular-material.js"></script>
@@ -36,8 +36,11 @@
 
 </head>
 <body ng-controller="mainController as main">
+
     <div class="container">
-        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right', 'showEasing':'linear'}"></toaster-container>
+        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right', 'showEasing':'linear'}">
+
+        </toaster-container>
 
         <top-navbar></top-navbar>
 
@@ -49,7 +52,7 @@
 
     </div>
 
-    <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Eat cake" ng-click="helloWorld()">
+    <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Eat cake" ng-click="toggleLeft()">
         +
     </md-button>
 

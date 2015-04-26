@@ -3,7 +3,7 @@
         .module('homeController', ['userService', 'ngAnimate', 'toaster', 'ngMaterial'])
         .controller('homeController', homeController);
 
-        function homeController($scope, User, $timeout, toaster, $window) {
+        function homeController($scope, User, $timeout, toaster, $window, $mdSidenav, $mdUtil, $log) {
             $scope.getUserResponse = function () {
                 User.all()
                     .success(function(data){
@@ -28,6 +28,7 @@
                 $scope.userID = "";
                 $scope.phone = "";
                 toaster.pop('error', 'Page Response', 'User Data has been removed', 2000);
-            }
+            };
+
         }
 }());

@@ -3,7 +3,9 @@
         .module('homeController', ['userService', 'ngAnimate', 'toaster', 'ngMaterial'])
         .controller('homeController', homeController);
 
-        function homeController($scope, User, $timeout, toaster, $window, $mdSidenav, $mdUtil, $log) {
+        function homeController($scope, User, toaster, $window) {
+            $scope.jumbotronMsg = "To Do App";
+
             $scope.getUserResponse = function () {
                 User.all()
                     .success(function(data){

@@ -4,6 +4,7 @@
         .controller('homeController', homeController);
 
         function homeController($scope, User, toaster, $window) {
+            $scope.jumbotronMsg = "To Do App";
             $scope.getUserResponse = function () {
                 User.get()
                     .success(function(data){

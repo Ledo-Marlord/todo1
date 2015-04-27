@@ -25,7 +25,6 @@
     <!-- App Modules -->
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="appRouter.js"></script>
-    <script type="text/javascript" src="controllers/mainController.js"></script>
     <script type="text/javascript" src="controllers/testController.js"></script>
     <script type="text/javascript" src="controllers/homeController.js"></script>
     <script type="text/javascript" src="services/userService.js"></script>
@@ -34,24 +33,18 @@
     <script src="http://localhost:35729/livereload.js"></script>
 
 </head>
-<body ng-controller="mainController as main">
+<body>
+
+    <top-navbar></top-navbar>
 
     <div class="container">
-        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right', 'showEasing':'linear'}">
-
-        </toaster-container>
-
-        <top-navbar></top-navbar>
-
-        <div class="jumbotron text-center">
-            <h1>{{ main.message }}</h1>
-        </div>
+        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right', 'showEasing':'linear'}"></toaster-container>
 
         <div ng-view></div>
 
     </div>
 
-    <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Eat cake" ng-click="toggleLeft()">
+    <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Eat cake">
         +
     </md-button>
 

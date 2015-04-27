@@ -25,7 +25,7 @@
     function navController($location) {
         var vm = this;
 
-        vm.brand = 'Todo App';
+        vm.brand = '2Due';
 
         vm.navbar = {linkpage1: '/', page1: 'Home',
                      linkpage2: '/test', page2: 'Test'};

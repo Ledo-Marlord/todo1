@@ -5,12 +5,17 @@ body {
 
 .jumbotron {
   background-color: #B8C4C7;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  border-radius: 0px !important; }
+
+.btn {
+  border-radius: 0px !important; }
 
 a {
   color: #00B7FF; }
 
 #userInfo {
+  height: 300px;
   margin-top: 0px;
   padding-top: 50px;
   padding-bottom: 50px;

@@ -13,16 +13,16 @@
             replace: true,
             controller: navController,
             controllerAs: 'vm',
-            templateUrl: 'navbarTemplate.html',
+            templateUrl: 'directives/navbar/navbarTemplate.html',
             transclude: true
         };
 
         return directive;
     }
 
-    navController.$inject = ['$scope', '$location'];
+    navController.$inject = ['$location'];
 
-    function navController($scope, $location) {
+    function navController($location) {
         var vm = this;
 
         vm.brand = 'Todo App';

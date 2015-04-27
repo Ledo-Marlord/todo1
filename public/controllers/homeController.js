@@ -3,18 +3,24 @@
         .module('homeController', ['userService', 'ngAnimate', 'toaster', 'ngMaterial'])
         .controller('homeController', homeController);
 
-        function homeController($scope, User, $timeout, toaster, $window, $mdSidenav, $mdUtil, $log) {
+        function homeController($scope, User, toaster, $window) {
             $scope.getUserResponse = function () {
-                User.all()
+                User.get()
                     .success(function(data){
-                        $scope.name = data.name;
-                        $scope.userID = data.userID;
-                        $scope.phone = data.phone;
+                        console.log(data[0]);
+                        $scope.name = data[0].name;
+                        $scope.userID = data[0].userID;
+                        $scope.phone = data[0].phone;
+                        console.log(data);
                         toaster.pop('success', 'DB Response', 'Data Returned Successfully', 2000);
                     });
             };
             $scope.postUserInfo = function () {
                 toaster.pop('warning', 'Page Response', 'Still need to complete POST method', 2000);
+                User.post()
+                    .success(function () {
+                    console.log('home controller user post success');
+                })
             };
             $scope.linkToToast = function () {
                 toaster.pop('note', "Link to Toaster Github", 'https://github.com/jirikavi/AngularJS-Toaster', 2500, 'trustedHtml', function(toaster) {

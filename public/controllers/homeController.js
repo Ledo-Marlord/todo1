@@ -5,6 +5,18 @@
 
         function homeController($scope, User, toaster, $window) {
             $scope.jumbotronMsg = "To Do App";
+
+            $scope.createNewUser = function (userName, userId, userPhone) {
+                User.post(userName, userId, userPhone).then(postSuccess, onError);
+            };
+            var postSuccess = function () {
+                toaster.pop('warning', 'Page Response', 'Still need to complete POST method', 2000);
+            };
+            var onError = function (err) {
+                toaster.pop('warning', 'Page Response', 'Error', 2000);
+                console.log(err);
+            };
+
             $scope.getUserResponse = function () {
                 User.get()
                     .success(function(data){
@@ -15,13 +27,6 @@
                         console.log(data);
                         toaster.pop('success', 'DB Response', 'Data Returned Successfully', 2000);
                     });
-            };
-            $scope.postUserInfo = function () {
-                toaster.pop('warning', 'Page Response', 'Still need to complete POST method', 2000);
-                User.post()
-                    .success(function () {
-                    console.log('home controller user post success');
-                })
             };
             $scope.linkToToast = function () {
                 toaster.pop('note', "Link to Toaster Github", 'https://github.com/jirikavi/AngularJS-Toaster', 2500, 'trustedHtml', function(toaster) {

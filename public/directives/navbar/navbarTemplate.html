@@ -19,17 +19,10 @@
                     <a href="{{vm.navbar.linkpage2}}">{{vm.navbar.page2}}</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav pull-right">
-                <li>
-                    <a href="{{vm.navlinks.link1}}" target="_blank">{{vm.navlinks.title1}}</a>
-                </li>
-                <li>
-                    <a href="{{vm.navlinks.link2}}" target="_blank">{{vm.navlinks.title2}}</a>
-                </li>
-                <li>
-                    <a href="{{vm.navlinks.link3}}" target="_blank">{{vm.navlinks.title3}}</a>
-                </li>
-            </ul>
+        </div>
+
+        <div ng-hide="!vm.user">
+            Logged in as: {{vm.user}}!
         </div>
     </div>
 </nav>

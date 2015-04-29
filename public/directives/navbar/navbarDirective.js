@@ -28,7 +28,7 @@
         vm.brand = '2Due';
 
         vm.navbar = {linkpage1: '/', page1: 'Home',
-                     linkpage2: '/test', page2: 'Test'};
+                     linkpage2: '/links', page2: 'Links'};
 
         vm.isActive = function (viewLocation) {
             return viewLocation === $location.path();

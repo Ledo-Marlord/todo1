@@ -1,4 +1,4 @@
 ( function () {
     angular
-        .module('todoApp', ['ngResource', 'appRouter', 'testController', 'homeController' ,'userService', 'todoNavbar'])
+        .module('todoApp', ['ngResource', 'appRouter', 'linksController', 'homeController' ,'userService', 'todoNavbar'])
 }());

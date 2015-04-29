@@ -13,10 +13,10 @@
                     controller: 'homeController',
                     controllerAs: 'home'
                 })
-                .when('/test', {
-                    templateUrl: 'views/pages/test.html',
-                    controller: 'testController',
-                    controllerAs: 'test'
+                .when('/links', {
+                    templateUrl: 'views/pages/links.html',
+                    controller: 'linksController',
+                    controllerAs: 'link'
                 })
                 .otherwise({
                     redirectTo: '/'

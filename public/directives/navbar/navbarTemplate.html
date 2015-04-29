@@ -2,27 +2,23 @@
     <div class="container">
         <div class="navbar-brand"> {{ vm.brand }} </div>
 
-        <button type="button" class="navbar-toggle"
-                ng-click="collapse = !collapse">
+        <button type="button" class="navbar-toggle" data-parent=".container" data-target="#navbarCollapse" data-toggle="collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
 
-        <div class="navbar-collapse collapse">
+        <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li md-ink-ripple ng-class="{active: vm.isActive('/')}">
                     <a href="{{vm.navbar.linkpage1}}">{{vm.navbar.page1}}</a>
                 </li>
-                <li md-ink-ripple ng-class="{active: vm.isActive('/test')}">
+                <li md-ink-ripple ng-class="{active: vm.isActive('/links')}">
                     <a href="{{vm.navbar.linkpage2}}">{{vm.navbar.page2}}</a>
                 </li>
             </ul>
         </div>
 
-        <div ng-hide="!vm.user">
-            Logged in as: {{vm.user}}!
-        </div>
     </div>
 </nav>

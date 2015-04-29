@@ -1,7 +1,7 @@
 (function () {
     angular
-        .module('testController', [])
-        .controller('testController', function() {
+        .module('linksController', [])
+        .controller('linksController', function() {
             var vm = this;
 
             vm.message = 'test page message';

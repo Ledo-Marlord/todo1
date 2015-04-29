@@ -25,7 +25,7 @@
     <!-- App Modules -->
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="appRouter.js"></script>
-    <script type="text/javascript" src="controllers/testController.js"></script>
+    <script type="text/javascript" src="controllers/linksController.js"></script>
     <script type="text/javascript" src="controllers/homeController.js"></script>
     <script type="text/javascript" src="services/userService.js"></script>
     <script type="text/javascript" src="directives/navbar/navbarDirective.js"></script>
@@ -37,12 +37,9 @@
 
     <top-navbar></top-navbar>
 
-    <div class="container">
-        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right', 'showEasing':'linear'}"></toaster-container>
+    <toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right', 'showEasing':'linear'}"></toaster-container>
 
-        <div ng-view></div>
-
-    </div>
+    <div ng-view></div>
 
     <md-button class="md-fab md-primary md-fab-bottom-right" aria-label="Eat cake">
         +

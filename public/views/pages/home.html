@@ -7,19 +7,21 @@
 
         <!-- TODO I'd like to break these out at some point and put them in a vertical list from the FAB-->
 
-        <md-button id="success" class="md-raised btn btn-success col-sm-3 col-xs-12" ng-click="getUserResponse()">Get User Data</md-button>
-        <md-button id="info" class="md-raised btn btn-primary col-sm-3 col-xs-12" ng-click="linkToToast()">Toaster Info</md-button>
-        <md-button id="alert" class="md-raised btn btn-danger col-sm-3 col-xs-12" ng-click="clearData()">Clear User Data</md-button>
+        <md-button id="success" class="md-raised btn btn-success col-sm-3 col-xs-6" ng-click="getUserResponse(); showAdd=false">Get User Data</md-button>
+        <md-button id="info" class="md-raised btn btn-primary col-sm-3 col-xs-6" ng-click="linkToToast()">Toaster Info</md-button>
+        <md-button id="alert" class="md-raised btn btn-danger col-sm-3 col-xs-6" ng-click="clearData()">Clear User Data</md-button>
+        <md-button id="post" class="md-raised btn btn-warning col-sm-3 col-xs-6" ng-click="showAdd=!showAdd">Add User Data</md-button>
     </div>
     <div id="userInfo" class="container-fluid text-center">
-        <form name="userInput" ng-submit="createNewUser(userName, userId, userPhone)">
-            <input type="text" ng-model="userName" required=""/>
-            <input type="text" ng-model="userId" required=""/>
-            <input type="number" ng-model="userPhone"/>
-            <input type="submit" value="Post User Data"/>
-
-        </form>
-        <ul class="col-sm-6 col-sm-offset-3 col-xs-12" style="text-align: left; list-style: none; font-size: 20px;">
+        <div class="container-fluid">
+            <form class="input-group-lg" ng-hide="!showAdd" name="userInput" ng-submit="createNewUser(userName, userId, userPhone)">
+                <input class="addUser col-xs-12 col-sm-6 form-control" placeholder="Username" type="text" ng-model="userName" required="">
+                <input class="addUser col-xs-12 col-sm-6 form-control" placeholder="User Id" type="number" ng-model="userId" required="">
+                <input class="addUser col-xs-12 col-sm-6 form-control" placeholder="User Phone" type="number" ng-model="userPhone" >
+                <md-button id="submit" type="submit" class="pull-right md-raised btn btn-primary col-sm-3 col-xs-6">Post User Data</md-button>
+            </form>
+        </div>
+        <ul ng-show="!showAdd" class="col-sm-6 col-sm-offset-3 col-xs-12" style="text-align: left; list-style: none; font-size: 20px;">
             <li>Username: {{ name }}</li>
             <li>User ID: {{ userID }}</li>
             <li>Phone Number: {{ phone }}</li>

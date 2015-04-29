@@ -30,8 +30,6 @@
         vm.navbar = {linkpage1: '/', page1: 'Home',
                      linkpage2: '/test', page2: 'Test'};
 
-        console.log($scope.username);
-
         vm.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };

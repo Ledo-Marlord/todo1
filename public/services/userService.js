@@ -14,15 +14,16 @@
             };
 
             user.post = function (userName, userId, userPhone) {
-                $http.post('/api/user/save', {name: userName, userID: userId, phone: userPhone})
-                    .success(function(data, status, headers, config) {
-                        console.log(data, status, headers, config);
-                    })
-                    .error(function(data, status, headers, config) {
-                        console.log('user POST error');
+                return $http.post('/api/user/save', {name: userName, userID: userId, phone: userPhone})
+                    .then(function(data, status, headers, config) {
+                            console.log(data, status, headers, config);
+                        },
+                        function() {
+                            console.log('user POST error');
                         // called asynchronously if an error occurs
                         // or server returns response with an error status.
-                    });
+                    }
+                    );
             };
 
             return user;

@@ -4,35 +4,34 @@ var db = require('../../config/db');
 var User = require('../models/user');
 
 router.get('/user', function(req, res) {
-    User.find(function (err, users) {
-        if (err) throw err;
-        if (users.length === 0) {
-            var newUser = new User({name: 'Node Created User', userID: 1111, phone: 123123123});
-            newUser.save(function (err) {
-                if (err) throw err;
-                console.log('Api router get /user created a user because none existed.');
-                User.find(function (err, users) {
-                    if (err) throw err;
-                    res.json(
-                        users
-                    );
-                })
-            })
-        } else {
-            res.json(
-                users
-            );
-        }
-    });
+    User.find(function(err, users) {
+        if (err) res.send(err);
 
+        // return the users
+        res.json(users);
+    });
 });
 
 router.post('/user/save', function(req, res) {
     console.log(req.body);
-    var user = new User(req.body);
-    user.save(function (User) {
-        console.log('User ' + User.name + ' saved successfully!');
+    var user = new User();
+    user.name = req.body.name;
+    user.userID = req.body.userID;
+    user.phone = req.body.phone;
+
+    user.save(function(err) {
+        if (err) {
+            // duplicate entry
+            if (err.code == 11000)
+                return res.json({ success: false, message: 'A user with that username already exists. '});
+            else
+                return res.send(err);
+        }
+
+        // return a message
+        res.json({ message: 'User created!' });
     });
+
 });
 
 module.exports = router;

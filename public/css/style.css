@@ -36,10 +36,21 @@ a {
   background-color: #2f96b4 !important;
   color: white; }
 
-#warning {
+#post {
+  height: 33px;
+  background-color: #337ab7 !important;
+  color: white; }
+
+#submit {
   height: 33px;
   background-color: #f89406 !important;
   color: white; }
 
 #button-container {
   height: 35px; }
+
+.addUser {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+/*# sourceMappingURL=style.css.map */

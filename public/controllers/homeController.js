@@ -10,7 +10,9 @@
                 User.post(userName, userId, userPhone).then(postSuccess, onError);
             };
             var postSuccess = function () {
-                toaster.pop('warning', 'Page Response', 'Still need to complete POST method', 2000);
+                toaster.pop('warning', 'Page Response', 'User Created Successfully!', 2000);
+                $scope.showAdd = false;
+                $scope.getUserResponse();
             };
             var onError = function (err) {
                 toaster.pop('warning', 'Page Response', 'Error', 2000);
@@ -20,11 +22,10 @@
             $scope.getUserResponse = function () {
                 User.get()
                     .success(function(data){
-                        console.log(data[0]);
-                        $scope.name = data[0].name;
-                        $scope.userID = data[0].userID;
-                        $scope.phone = data[0].phone;
-                        console.log(data);
+                        $scope.name = data[data.length-1].name;
+                        $scope.userID = data[data.length-1].userID;
+                        $scope.phone = data[data.length-1].phone;
+
                         toaster.pop('success', 'DB Response', 'Data Returned Successfully', 2000);
                     });
             };
@@ -41,6 +42,5 @@
                 $scope.phone = "";
                 toaster.pop('error', 'Page Response', 'User Data has been removed', 2000);
             };
-
         }
 }());

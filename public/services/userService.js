@@ -10,11 +10,11 @@
 
             // call to get THE user
             user.get = function () {
-                return $http.get('http://localhost:1337/api/user');
+                return $http.get('http://localhost:1337/api/users');
             };
 
             user.post = function (userName, userId, userPhone) {
-                return $http.post('http://localhost:1337/api/user/save', {name: userName, userID: userId, phone: userPhone})
+                return $http.post('http://localhost:1337/api/users', {name: userName, userID: userId, phone: userPhone})
                     .then(function(data, status, headers, config) {
                             console.log(data, status, headers, config);
                         },
